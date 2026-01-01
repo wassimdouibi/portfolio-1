@@ -76,6 +76,83 @@ export const gridItems = [
   },
 ];
 
+export const professionalJourney = [
+  {
+    id: 2,
+    type: "job",
+    organization: "3S PAY",
+    role: "Mobile App Developer",
+    location: "Hydra, Algiers",
+    date: "01/2026 - Present",
+    technologies: ["Kotlin", "Spring Boot", "Java", "REST APIs", "IoT"],
+    gradient: "from-purple-400 via-pink-400 to-red-500",
+  },
+  {
+    id: 1,
+    type: "internship",
+    organization: "Sonatrach",
+    role: "Business Intelligence Intern",
+    location: "Boumerdes, Algeria",
+    date: "11/2025 - Present",
+    technologies: ["BI", "Data Warehouse", "ETL", "Power BI", "Python"],
+    gradient: "from-emerald-400 via-cyan-400 to-blue-500",
+  },
+  {
+    id: 3,
+    type: "project",
+    organization: "AttendEase",
+    role: "Mobile Developer & UI/UX Designer",
+    location: "Algeria",
+    date: "02/2025 - 04/2025",
+    technologies: ["Kotlin", "Ktor", "MySQL", "Figma"],
+    gradient: "from-blue-400 via-cyan-400 to-emerald-500",
+  },
+  {
+    id: 4,
+    type: "project",
+    organization: "Food Delivery App",
+    role: "Mobile Developer & UI/UX Designer",
+    location: "Algeria",
+    date: "11/2024 - 01/2025",
+    technologies: ["Kotlin", "Ktor", "PostgreSQL", "Figma"],
+    gradient: "from-orange-400 via-amber-400 to-yellow-500",
+  },
+  {
+    id: 6,
+    type: "internship",
+    organization: "RDSI",
+    role: "Web Developer Intern & Concept Designer",
+    location: "Algeria",
+    date: "08/2024 - 09/2024",
+    technologies: ["React", "Postman", "Tailwind CSS", "Figma"],
+    gradient: "from-indigo-400 via-blue-400 to-cyan-500",
+  },
+  {
+    id: 7,
+    type: "internship",
+    organization: "Bac Operations (ESI ex INI)",
+    role: "Technical Support Assistant",
+    location: "Algeria",
+    date: "07/2024 - 08/2024",
+    technologies: [
+      "On-site Deployment",
+      "Technical Support",
+      "Data Management",
+    ],
+    gradient: "from-pink-400 via-rose-400 to-orange-500",
+  },
+  {
+    id: 5,
+    type: "project",
+    organization: "CaptainEarth",
+    role: "Mobile App Developer",
+    location: "Algeria",
+    date: "02/2023 - 05/2023",
+    technologies: ["Flutter", "MySQL", "Figma"],
+    gradient: "from-green-400 via-lime-400 to-cyan-500",
+  },
+];
+
 export const projects = [
   {
     id: 1,

@@ -1,99 +1,209 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { workExperience } from "@/data";
+const skillGroups = [
+  {
+    title: "Mobile & Backend",
+    items: ["Kotlin", "Jetpack Compose", "Hilt", "Postman", "SpringBoot"],
+    gradient: "from-purple-400 to-pink-400",
+  },
+  {
+    title: "Backend & Systems",
+    items: [
+      "Django",
+      "DRF",
+      "Djoser",
+      "Open Api",
+      "Python",
+      "Odoo",
+      "C",
+      "Java",
+      "JavaScript",
+    ],
+    gradient: "from-orange-400 to-yellow-400",
+  },
+  {
+    title: "Databases",
+    items: ["MySQL", "PostgreSQL", "MongoDB", "Oracle"],
+    gradient: "from-emerald-400 to-teal-400",
+  },
+  {
+    title: "Design & Collaboration",
+    items: ["Figma", "GitHub", "GitLab", "Docker"],
+    gradient: "from-blue-400 to-cyan-400",
+  },
+  {
+    title: "Frontend & Web",
+    items: [
+      "HTML",
+      "CSS",
+      "JS",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Shadcn UI",
+    ],
+    gradient: "from-indigo-400 to-violet-400",
+  },
+];
 
 const Experience = () => {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
     <div className="py-20 w-full px-5" id="experience">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-          <div className="border-4 border-black dark:border-white overflow-hidden mb-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+        <div className="border-4 border-black dark:border-white overflow-hidden mb-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] relative">
+          {/* Static shapes in header */}
+          {/* Static Decorative Shapes */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Circles */}
+            <div className="absolute top-10 left-8 w-20 h-20 rounded-full border-4 border-purple-300/40" />
+            <div className="absolute bottom-40 left-16 w-24 h-24 rounded-full border-4 border-pink-300/30" />
+            <div className="absolute bottom-20 right-20 w-28 h-28 rounded-full bg-orange-300/15" />
+            <div className="absolute top-1/2 left-1/4 w-12 h-12 rounded-full border-2 border-green-300/40" />
+            <div className="absolute top-1/3 right-1/3 w-32 h-32 rounded-full bg-cyan-300/10" />
+
+            {/* Squares */}
+            <div className="absolute top-24 left-1/3 w-16 h-16 border-4 border-yellow-400/30 rotate-12" />
+            <div className="absolute bottom-32 right-1/4 w-20 h-20 bg-red-300/20 rotate-45" />
+
+            {/* Triangles */}
+            <div className="absolute top-1/2 right-1/4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[28px] border-b-blue-400/30 rotate-45" />
+
+            {/* Rectangles */}
+
+            {/* Stars */}
+            <div className="absolute top-1/3 left-12 text-3xl text-yellow-400/30">
+              ★
+            </div>
+
+            {/* Code symbols */}
+            <div className="absolute bottom-48 left-32 text-5xl font-bold text-orange-400/15">
+              {"{ }"}
+            </div>
+
+            {/* Dots */}
+            <div className="absolute top-12 right-1/3 w-3 h-3 bg-red-400/40 rounded-full" />
+
+            {/* Plus signs */}
+            <div className="absolute top-2/3 right-1/4 text-5xl font-bold text-purple-400/20">
+              +
+            </div>
+            <div className="absolute bottom-1/3 left-24 text-3xl font-bold text-blue-400/25">
+              ×
+            </div>
+
+            {/* Dashes/Lines */}
+            <div className="absolute top-52 left-1/3 w-16 h-1 bg-pink-400/30 rotate-45" />
+            <div className="absolute top-1/2 right-12 w-12 h-1 bg-yellow-400/35 rotate-90" />
+
+            {/* Semicircles */}
+            <div className="absolute top-36 right-1/2 w-16 h-8 border-4 border-indigo-400/30 rounded-t-full" />
+            <div className="absolute bottom-36 left-1/2 w-20 h-10 border-3 border-pink-400/30 rounded-b-full" />
+
+            {/* Diamonds */}
+            <div className="absolute top-1/3 left-1/3 w-12 h-12 bg-cyan-400/20 rotate-45" />
+            <div className="absolute bottom-1/2 right-1/2 w-16 h-16 border-3 border-orange-400/30 rotate-45" />
+
+            {/* Wavy lines using borders */}
+            <div className="absolute top-44 left-1/4 w-24 h-1 bg-gradient-to-r from-purple-400/0 via-purple-400/40 to-purple-400/0" />
+            <div className="absolute bottom-44 right-1/4 w-28 h-1 bg-gradient-to-r from-blue-400/0 via-blue-400/40 to-blue-400/0" />
+          </div>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-4 left-4 w-8 h-8 border-2 border-white/30 rotate-45" />
+            <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full border-2 border-white/20" />
+            <div className="absolute top-1/2 right-8 text-2xl text-white/20">
+              ★
+            </div>
+            <div className="absolute bottom-6 left-1/3 w-6 h-6 bg-white/15 rounded-full" />
+          </div>
+
           <div className="relative bg-gradient-to-r from-[#00D9FF] via-[#0099CC] to-[#00B8E6] dark:from-cyan-900/40 dark:via-cyan-900/30 dark:to-cyan-900/40 p-8 md:p-12 overflow-hidden diagonal-pattern">
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-4 right-6 w-24 h-24 rounded-full bg-white/20 blur-2xl" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/10 blur-3xl" />
+              <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/20 blur-2xl" />
+              <div className="absolute bottom-0 left-1/3 w-28 h-28 rounded-full bg-white/15 blur-3xl" />
             </div>
-              <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black dark:text-white relative z-10">
+
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black dark:text-white relative z-10">
               My{" "}
-                <span className="bg-gradient-to-r from-[#FFB700] via-[#FF8C00] to-[#FF006E] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#FFB700] via-[#FF8C00] to-[#FF006E] bg-clip-text text-transparent">
                 expertise
               </span>
             </h1>
           </div>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {workExperience.map((card, index) => (
-            <div
-              key={card.id}
-              onMouseEnter={() => setHoveredId(card.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              className={`
-                border-4 border-black dark:border-white 
-                bg-white dark:bg-black-100 rounded-2xl 
-                shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
-                dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] 
-                hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] 
-                dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] 
-                transition-all duration-300 overflow-hidden group cursor-pointer
-                flex flex-col h-full
-                hover:-translate-y-2
-              `}
-            >
-              {/* Colored Header Bar */}
-              <div
-                className={`h-24 md:h-32 lg:h-40 bg-gradient-to-br overflow-hidden relative
-                ${index % 4 === 0 ? "from-[#FF006E] to-[#FF1493]" : ""}
-                ${index % 4 === 1 ? "from-[#00D9FF] to-[#0099CC]" : ""}
-                ${index % 4 === 2 ? "from-[#FFB700] to-[#FF8C00]" : ""}
-                ${index % 4 === 3 ? "from-[#00FF88] to-[#00DD66]" : ""}
-              `}
-              >
-                {/* Animated background pattern */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute top-2 right-4 w-16 h-16 rounded-full bg-white/30 blur-xl group-hover:scale-110 transition-transform" />
-                  <div className="absolute -bottom-2 left-2 w-12 h-12 rounded-full bg-white/20 blur-lg" />
-                </div>
+        {/* Skills Map */}
+        <div className="mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left: Short intro + center map visual */}
+            <div className="flex flex-col items-start justify-center p-6 bg-white rounded-2xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+              <h2 className="text-lg font-black uppercase mb-2">
+                Soft Skills & Core Competencies
+              </h2>
+              <p className="text-sm text-gray-700 mb-4">
+                Beyond technical prowess, I bring a suite of soft skills that
+                enhance collaboration, problem-solving, and project success.
+              </p>
 
-                {/* Icon Container */}
-                <div className="relative h-full w-full flex items-center justify-center z-10">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-black dark:bg-white/10 backdrop-blur-md border-2 border-white/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <img
-                      src={card.thumbnail}
-                      alt={card.title}
-                      className="w-10 md:w-12"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div className="p-5 md:p-6 lg:p-7 flex flex-col h-full">
-                <h3 className="text-lg md:text-xl font-black text-black dark:text-white uppercase tracking-tight mb-3 line-clamp-2">
-                  {card.title}
-                </h3>
-
-                <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed flex-grow line-clamp-3 group-hover:line-clamp-none transition-all">
-                  {card.desc}
-                </p>
-
-                {/* Bottom accent bar */}
-                <div className="mt-4 pt-4 border-t-2 border-black/10 dark:border-white/10 flex items-center">
-                  <div
-                    className={`h-2 flex-grow rounded-full bg-gradient-to-r
-                    ${index % 4 === 0 ? "from-[#FF006E] to-[#FF1493]" : ""}
-                    ${index % 4 === 1 ? "from-[#00D9FF] to-[#0099CC]" : ""}
-                    ${index % 4 === 2 ? "from-[#FFB700] to-[#FF8C00]" : ""}
-                    ${index % 4 === 3 ? "from-[#00FF88] to-[#00DD66]" : ""}
-                  `}
-                  />
-                </div>
+              <div className="w-full flex flex-wrap gap-3 mt-2">
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Analytical Thinking
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Data Storytelling
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Problem Solving
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Attention to Detail
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Cross-functional Collaboration
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Time Management
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Adaptability
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  User Empathy
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  System Thinking
+                </span>
+                <span className="px-3 py-1.5 bg-gray-100 text-sm font-semibold rounded-full shadow-sm border border-gray-100">
+                  Mentoring
+                </span>
               </div>
             </div>
-          ))}
+
+            {/* Right: Skill groups */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {skillGroups.map((g, idx) => (
+                <div
+                  key={g.title}
+                  className="group relative overflow-hidden rounded-2xl border-4 border-black bg-white p-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300"
+                >
+                  <div
+                    className={`h-3 w-full rounded-t-md mb-4 bg-gradient-to-r ${g.gradient}`}
+                  />
+                  <h3 className="text-sm font-black mb-2">{g.title}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {g.items.map((s) => (
+                      <span
+                        key={s}
+                        className="text-xs px-2 py-1 bg-gray-100 rounded-full font-semibold border border-gray-200"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

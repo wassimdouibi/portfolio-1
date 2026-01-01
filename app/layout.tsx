@@ -7,8 +7,9 @@ import { ThemeProvider } from "./provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adrian's Portfolio",
-  description: "Modern & Minimal JS Mastery Portfolio",
+  title: "Wassim Douibi",
+  description:
+    "Information Systems Engineer specializing in Business Intelligence, Mobile, and Backend development",
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
+        <link rel="icon" href="/wassim-douibi-icon.svg" sizes="any" />
       </head>
       <body className={`${inter.className} modern-gradient`}>
         <ThemeProvider

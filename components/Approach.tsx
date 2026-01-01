@@ -31,6 +31,7 @@ const Approach = () => {
             des="Understanding your business challenges and data landscape. I analyze your
           functional requirements, identify key metrics, and define the analytical models
           needed to deliver actionable insights."
+            bgColor="bg-emerald-900"
           >
             <CanvasRevealEffect
               animationSpeed={5.1}
@@ -43,10 +44,11 @@ const Approach = () => {
             des="Designing robust data solutions including Data Warehouse architecture,
           ETL processes, and database schemas. I ensure data quality, implement
           integration layers, and structure your data for optimal analysis."
+            bgColor="bg-pink-600"
           >
             <CanvasRevealEffect
               animationSpeed={3}
-              containerClassName="bg-black rounded-3xl overflow-hidden"
+              containerClassName="bg-pink-600 rounded-3xl overflow-hidden"
               colors={[
                 [236, 72, 153],
                 [232, 121, 249],
@@ -59,6 +61,7 @@ const Approach = () => {
             des="Building statistical models, developing reporting solutions, and creating
           dashboards for data visualization. I transform complex data into clear insights
           that drive strategic business decisions."
+            bgColor="bg-sky-600"
           >
             <CanvasRevealEffect
               animationSpeed={3}
@@ -80,19 +83,23 @@ const Card = ({
   children,
   // add this one for the desc
   des,
+  bgColor,
 }: {
   title: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
   des: string;
+  bgColor?: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border-4 border-black dark:border-white group/canvas-card flex items-center justify-center
-       bg-white dark:bg-black-100 max-w-sm w-full mx-auto p-6 relative lg:h-[35rem] rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] transition-all duration-300"
+      className={`border-4 border-black dark:border-white group/canvas-card flex items-center justify-center
+       bg-white dark:bg-black-100 max-w-sm w-full mx-auto p-6 relative lg:h-[35rem] rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] transition-all duration-300 ${
+         hovered ? bgColor : ""
+       }`}
     >
       {/* change to h-10 w-10 , add opacity-30  */}
       <Icon className="absolute h-8 w-8 -top-4 -left-4 text-black dark:text-white opacity-40" />
@@ -105,32 +112,41 @@ const Card = ({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+            className="h-full w-full absolute inset-0 rounded-2xl"
           >
             {children}
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 px-10">
+      <div
+        className={`relative z-20 px-10 transition-all duration-300 ${
+          hovered ? "text-white" : ""
+        }`}
+      >
         <div
-          className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
-        group-hover/canvas-card:opacity-0 transition duration-200 min-w-40 mx-auto flex items-center justify-center"
+          className={`text-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition-all duration-300 min-w-40 mx-auto flex items-center justify-center ${
+            hovered ? "opacity-0 -translate-y-4" : "opacity-100"
+          }`}
         >
           {icon}
         </div>
         <h2
-          className="text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 text-black dark:text-white mt-4  font-bold group-hover/canvas-card:text-white
-         group-hover/canvas-card:-translate-y-2 transition duration-200"
+          className={`text-center text-3xl relative z-10 mt-4 font-bold transition-all duration-200 ${
+            hovered
+              ? "opacity-100 text-white -translate-y-2"
+              : "opacity-0 text-black dark:text-white"
+          }`}
         >
           {title}
         </h2>
         {/* add this one for the description */}
         <p
-          className="text-sm opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 mt-4 text-[#e4ecff] group-hover/canvas-card:text-white text-center
-         group-hover/canvas-card:-translate-y-2 transition duration-200"
+          className={`text-sm relative z-10 mt-4 text-center transition-all duration-200 ${
+            hovered
+              ? "opacity-100 text-white -translate-y-2"
+              : "opacity-0 text-[#e4ecff]"
+          }`}
         >
           {des}
         </p>

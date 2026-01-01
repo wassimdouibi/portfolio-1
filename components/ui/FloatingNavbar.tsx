@@ -59,11 +59,10 @@ export const FloatingNav = ({
         }}
         className={cn(
           // light-friendly floating nav with dark variant
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg bg-white/90 dark:bg-black/75 border border-gray-200 dark:border-white/10 backdrop-blur-md shadow-lg items-center justify-center space-x-4",
+          "flex fixed z-[5000] top-10 inset-x-0 mx-auto w-fit px-8 py-5 rounded-lg bg-white/90 dark:bg-black/75 border border-gray-200 dark:border-white/10 backdrop-blur-md shadow-lg items-center justify-center gap-3",
           className
         )}
       >
-        <span className="nav-accent-dot hidden sm:inline-block" />
         {navItems.map((navItem: any, idx: number) => (
           <Link
             key={`link=${idx}`}
@@ -80,11 +79,6 @@ export const FloatingNav = ({
             </span>
           </Link>
         ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
       </motion.div>
     </AnimatePresence>
   );
