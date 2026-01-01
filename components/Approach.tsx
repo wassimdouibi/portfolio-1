@@ -5,54 +5,68 @@ import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 
 const Approach = () => {
   return (
-    <section className="w-full py-20">
-      <h1 className="heading">
-        My <span className="text-purple">approach</span>
-      </h1>
-      {/* remove bg-white dark:bg-black */}
-      <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
-        {/* add des prop */}
-        <Card
-          title="Requirements Gathering"
-          icon={<AceternityIcon order="Phase 1" />}
-          des="Understanding your business challenges and data landscape. I analyze your
+    <section className="w-full py-20 px-5">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="border-4 border-black dark:border-white overflow-hidden mb-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+          <div className="relative bg-gradient-to-r from-[#FFB700] via-[#FF8C00] to-[#FF006E] dark:from-yellow-900/40 dark:via-orange-900/30 dark:to-pink-900/40 p-8 md:p-12 overflow-hidden diagonal-pattern">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute -top-6 right-1/4 w-32 h-32 rounded-full bg-white/20 blur-2xl" />
+              <div className="absolute -bottom-10 left-0 w-36 h-36 rounded-full bg-white/10 blur-3xl" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black dark:text-white relative z-10">
+              My{" "}
+              <span className="bg-gradient-to-r from-[#FFB700] via-[#FF8C00] to-[#FF006E] bg-clip-text text-transparent">
+                approach
+              </span>
+            </h1>
+          </div>
+        </div>
+        {/* remove bg-white dark:bg-black */}
+        <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
+          {/* add des prop */}
+          <Card
+            title="Requirements Gathering"
+            icon={<AceternityIcon order="Phase 1" />}
+            des="Understanding your business challenges and data landscape. I analyze your
           functional requirements, identify key metrics, and define the analytical models
           needed to deliver actionable insights."
-        >
-          <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
-          />
-        </Card>
-        <Card
-          title="Data Architecture & Modeling"
-          icon={<AceternityIcon order="Phase 2" />}
-          des="Designing robust data solutions including Data Warehouse architecture,
+          >
+            <CanvasRevealEffect
+              animationSpeed={5.1}
+              containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
+            />
+          </Card>
+          <Card
+            title="Data Architecture & Modeling"
+            icon={<AceternityIcon order="Phase 2" />}
+            des="Designing robust data solutions including Data Warehouse architecture,
           ETL processes, and database schemas. I ensure data quality, implement
           integration layers, and structure your data for optimal analysis."
-        >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-black rounded-3xl overflow-hidden"
-            colors={[
-              [236, 72, 153],
-              [232, 121, 249],
-            ]}
-          />
-        </Card>
-        <Card
-          title="Implementation & Analytics"
-          icon={<AceternityIcon order="Phase 3" />}
-          des="Building statistical models, developing reporting solutions, and creating
+          >
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-black rounded-3xl overflow-hidden"
+              colors={[
+                [236, 72, 153],
+                [232, 121, 249],
+              ]}
+            />
+          </Card>
+          <Card
+            title="Implementation & Analytics"
+            icon={<AceternityIcon order="Phase 3" />}
+            des="Building statistical models, developing reporting solutions, and creating
           dashboards for data visualization. I transform complex data into clear insights
           that drive strategic business decisions."
-        >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
-            colors={[[125, 211, 252]]}
-          />
-        </Card>
+          >
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
+              colors={[[125, 211, 252]]}
+            />
+          </Card>
+        </div>
       </div>
     </section>
   );
@@ -77,18 +91,14 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      // change h-[30rem] to h-[35rem], add rounded-3xl
-      className="border border-blue-200/[0.3] group/canvas-card flex items-center justify-center
-       dark:border-white/[0.2]  bg-white dark:bg-black-100 max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-      style={{
-        // background: "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%)",
-      }}
+      className="border-4 border-black dark:border-white group/canvas-card flex items-center justify-center
+       bg-white dark:bg-black-100 max-w-sm w-full mx-auto p-6 relative lg:h-[35rem] rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] transition-all duration-300"
     >
       {/* change to h-10 w-10 , add opacity-30  */}
-      <Icon className="absolute h-10 w-10 -top-3 -left-3 text-blue-100 dark:text-white opacity-30" />
-      <Icon className="absolute h-10 w-10 -bottom-3 -left-3 text-blue-100 dark:text-white opacity-30" />
-      <Icon className="absolute h-10 w-10 -top-3 -right-3 text-blue-100 dark:text-white opacity-30" />
-      <Icon className="absolute h-10 w-10 -bottom-3 -right-3 text-blue-100 dark:text-white opacity-30" />
+      <Icon className="absolute h-8 w-8 -top-4 -left-4 text-black dark:text-white opacity-40" />
+      <Icon className="absolute h-8 w-8 -bottom-4 -left-4 text-black dark:text-white opacity-40" />
+      <Icon className="absolute h-8 w-8 -top-4 -right-4 text-black dark:text-white opacity-40" />
+      <Icon className="absolute h-8 w-8 -bottom-4 -right-4 text-black dark:text-white opacity-40" />
 
       <AnimatePresence>
         {hovered && (

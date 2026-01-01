@@ -10,7 +10,8 @@ export const gridItems = [
   {
     id: 1,
     title: "Strategic BI Implementation",
-    description: "Architecting end-to-end data pipelines that convert raw requirements into actionable business intelligence.",
+    description:
+      "Architecting end-to-end data pipelines that convert raw requirements into actionable business intelligence.",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full opacity-30",
     titleClassName: "justify-end",
@@ -20,7 +21,8 @@ export const gridItems = [
   {
     id: 2,
     title: "Global Collaboration",
-    description: "Based in Algeria, delivering high-quality technical solutions for international clients and enterprises.",
+    description:
+      "Based in Algeria, delivering high-quality technical solutions for international clients and enterprises.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -30,7 +32,8 @@ export const gridItems = [
   {
     id: 3,
     title: "Core Stack",
-    description: "A versatile toolkit spanning BI architecture, Mobile ecosystems, and Scalable Backend systems.",
+    description:
+      "A versatile toolkit spanning BI architecture, Mobile ecosystems, and Scalable Backend systems.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center text-center",
@@ -40,7 +43,8 @@ export const gridItems = [
   {
     id: 4,
     title: "Solutions Architect",
-    description: "Bridging the gap between complex data challenges and modern software engineering.",
+    description:
+      "Bridging the gap between complex data challenges and modern software engineering.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -51,7 +55,8 @@ export const gridItems = [
   {
     id: 5,
     title: "Mobile & Backend Specialist",
-    description: "Building robust applications with Kotlin, Spring Boot, and Django to support data-intensive workflows.",
+    description:
+      "Building robust applications with Kotlin, Spring Boot, and Django to support data-intensive workflows.",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -61,7 +66,8 @@ export const gridItems = [
   {
     id: 6,
     title: "Let's innovate together",
-    description: "Ready to take your data and development projects to the next level?",
+    description:
+      "Ready to take your data and development projects to the next level?",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
@@ -212,5 +218,10 @@ export const socialMedia = [
     id: 2,
     img: "/link.svg",
     link: "https://www.linkedin.com/in/douibi-wassim/",
+  },
+  {
+    id: 3,
+    img: "/behance.svg",
+    link: "https://www.behance.net/douibiwassim",
   },
 ];
