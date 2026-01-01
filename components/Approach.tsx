@@ -13,46 +13,39 @@ const Approach = () => {
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Planning & Strategy"
+          title="Requirements Gathering"
           icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
-          navigation, and content requirements."
+          des="Understanding your business challenges and data landscape. I analyze your
+          functional requirements, identify key metrics, and define the analytical models
+          needed to deliver actionable insights."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
-            // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
             containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
           />
         </Card>
         <Card
-          title="Development & Progress Update"
+          title="Data Architecture & Modeling"
           icon={<AceternityIcon order="Phase 2" />}
-          des="Once we agree on the plan, I cue my lofi playlist and dive into
-          coding. From initial sketches to polished code, I keep you updated
-          every step of the way."
+          des="Designing robust data solutions including Data Warehouse architecture,
+          ETL processes, and database schemas. I ensure data quality, implement
+          integration layers, and structure your data for optimal analysis."
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            // change bg-black to bg-pink-900
-            containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
+            containerClassName="bg-black rounded-3xl overflow-hidden"
             colors={[
-              // change the colors of the
-              [255, 166, 158],
-              [221, 255, 247],
+              [236, 72, 153],
+              [232, 121, 249],
             ]}
-            dotSize={2}
           />
-          {/* Radial gradient for the cute fade */}
-          {/* remove this one */}
-          {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Development & Launch"
+          title="Implementation & Analytics"
           icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
-          I'll translate everything into functional code, building your website
-          from the ground up."
+          des="Building statistical models, developing reporting solutions, and creating
+          dashboards for data visualization. I transform complex data into clear insights
+          that drive strategic business decisions."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -85,21 +78,17 @@ const Card = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       // change h-[30rem] to h-[35rem], add rounded-3xl
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center
-       dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl "
+      className="border border-blue-200/[0.3] group/canvas-card flex items-center justify-center
+       dark:border-white/[0.2]  bg-white dark:bg-black-100 max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
       style={{
-        //   add these two
-        //   you can generate the color from here https://cssgradient.io/
-        background: "rgb(4,7,29)",
-        backgroundColor:
-          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+        // background: "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%)",
       }}
     >
       {/* change to h-10 w-10 , add opacity-30  */}
-      <Icon className="absolute h-10 w-10 -top-3 -left-3 dark:text-white text-black opacity-30" />
-      <Icon className="absolute h-10 w-10 -bottom-3 -left-3 dark:text-white text-black opacity-30" />
-      <Icon className="absolute h-10 w-10 -top-3 -right-3 dark:text-white text-black opacity-30" />
-      <Icon className="absolute h-10 w-10 -bottom-3 -right-3 dark:text-white text-black opacity-30" />
+      <Icon className="absolute h-10 w-10 -top-3 -left-3 text-blue-100 dark:text-white opacity-30" />
+      <Icon className="absolute h-10 w-10 -bottom-3 -left-3 text-blue-100 dark:text-white opacity-30" />
+      <Icon className="absolute h-10 w-10 -top-3 -right-3 text-blue-100 dark:text-white opacity-30" />
+      <Icon className="absolute h-10 w-10 -bottom-3 -right-3 text-blue-100 dark:text-white opacity-30" />
 
       <AnimatePresence>
         {hovered && (
@@ -115,17 +104,14 @@ const Card = ({
 
       <div className="relative z-20 px-10">
         <div
-          // add this for making it center
-          // absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
           className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
         group-hover/canvas-card:opacity-0 transition duration-200 min-w-40 mx-auto flex items-center justify-center"
         >
           {icon}
         </div>
         <h2
-          // change text-3xl, add text-center
-          className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white 
+          className="text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100
+         relative z-10 text-black dark:text-white mt-4  font-bold group-hover/canvas-card:text-white
          group-hover/canvas-card:-translate-y-2 transition duration-200"
         >
           {title}
@@ -133,9 +119,8 @@ const Card = ({
         {/* add this one for the description */}
         <p
           className="text-sm opacity-0 group-hover/canvas-card:opacity-100
-         relative z-10 mt-4 group-hover/canvas-card:text-white text-center
+         relative z-10 mt-4 text-[#e4ecff] group-hover/canvas-card:text-white text-center
          group-hover/canvas-card:-translate-y-2 transition duration-200"
-          style={{ color: "#E4ECFF" }}
         >
           {des}
         </p>
@@ -158,7 +143,7 @@ const AceternityIcon = ({ order }: { order: string }) => {
         />
         <span
           className="inline-flex h-full w-full cursor-pointer items-center 
-        justify-center rounded-full bg-slate-950 px-5 py-2 text-purple backdrop-blur-3xl font-bold text-2xl"
+        justify-center rounded-full bg-white dark:bg-slate-950 px-5 py-2 text-purple backdrop-blur-3xl font-bold text-2xl"
         >
           {order}
         </span>

@@ -34,7 +34,6 @@ const Hero = () => {
       >
         {/* Radial gradient for the container to give a faded look */}
         <div
-          // chnage the bg to bg-black-100, so it matches the bg color and will blend in
           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
          bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
@@ -42,9 +41,13 @@ const Hero = () => {
 
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
-          </p>
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100/10 border border-blue-100/20 text-blue-600 dark:text-blue-100 text-xs font-medium mb-4 animate-fade-in">
+            <span className="relative flex h-2 w-2 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Available for new opportunities
+          </div>
 
           {/**
            *  Link: https://ui.aceternity.com/components/text-generate-effect
@@ -52,17 +55,17 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Engineering Data into Strategic Business Solutions"
+            className="text-center text-[40px] md:text-5xl lg:text-6xl font-bold tracking-tight"
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
+          <p className="text-center md:tracking-wider mb-8 mt-4 text-sm md:text-lg lg:text-xl text-black-100 dark:text-white-100 max-w-2xl">
+            I&apos;m <span className="text-purple font-semibold">Wassim Douibi</span>, an Information Systems Engineer specializing in <span className="text-blue-600 dark:text-blue-300">Business Intelligence</span>, Mobile, and Backend development.
           </p>
 
-          <a href="#about">
+          <a href="#projects">
             <MagicButton
-              title="Show my work"
+              title="Explore My Projects"
               icon={<FaLocationArrow />}
               position="right"
             />
